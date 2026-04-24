@@ -85,8 +85,8 @@ export default function DestinationsGlobe() {
         <defs>
           <radialGradient id="globeSphere" cx="35%" cy="30%">
             <stop offset="0%" stopColor={FIN.paper} stopOpacity="1" />
-            <stop offset="55%" stopColor={FIN.ochre} stopOpacity="0.9" />
-            <stop offset="100%" stopColor={FIN.ochreD} stopOpacity="1" />
+            <stop offset="55%" stopColor={FIN.teal} stopOpacity="0.9" />
+            <stop offset="100%" stopColor={FIN.tealD} stopOpacity="1" />
           </radialGradient>
           <radialGradient id="globeAtm" cx="50%" cy="50%">
             <stop offset="85%" stopColor={FIN.ochre} stopOpacity="0" />

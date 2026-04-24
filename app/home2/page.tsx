@@ -218,7 +218,7 @@ export default function Home2() {
               <br />
               <span style={{ color: FIN.teal }}>founders,</span> for
               <br />
-              the <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.ochre, textTransform: 'none' }}>restless</span> ones.
+              the <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.ink, background: FIN.ochre, padding: '0 10px', textTransform: 'none' }}>restless</span> ones.
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, marginTop: 40 }}>
               <p style={{ fontSize: 15, lineHeight: 1.65, color: FIN.stone, margin: 0 }}>
@@ -254,7 +254,7 @@ export default function Home2() {
             </div>
             <div style={{ position: 'absolute', bottom: -24, left: -24, background: FIN.paper, padding: '20px 26px', borderRadius: 14, boxShadow: '0 16px 36px rgba(20,19,16,0.14)', border: `1px solid ${FIN.rule}` }}>
               <div style={{ fontFamily: FIN.sans, fontSize: 36, fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1, color: FIN.ink }}>
-                412 <span style={{ color: FIN.ochre }}>founders</span>
+                412 <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 500 }}>founders</span>
               </div>
               <div style={{ fontSize: 12, color: FIN.stone, marginTop: 6, letterSpacing: '0.04em' }}>across 6 continents · 28 expeditions · since 2024</div>
             </div>
@@ -402,7 +402,7 @@ export default function Home2() {
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Or spin the world</div>
             <h2 style={{ fontFamily: FIN.sans, fontSize: 88, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 0.92, margin: 0, textTransform: 'uppercase' }}>
-              Go <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, textTransform: 'none', color: FIN.ochre }}>anywhere</span>
+              Go <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, textTransform: 'none', color: FIN.ink, background: FIN.ochre, padding: '0 10px' }}>anywhere</span>
               <br />
               you haven&apos;t.
             </h2>
