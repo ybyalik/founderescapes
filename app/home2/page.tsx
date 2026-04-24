@@ -1,17 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { FIN } from './_components/fin';
-import HeroVideo from './_components/HeroVideo';
+import Hero from './_components/Hero';
 import Photo from './_components/Photo';
-import DestinationsMap from './_components/DestinationsMap';
 import DestinationsGlobe from './_components/DestinationsGlobe';
 import FlipTestimonials from './_components/FlipTestimonials';
 import PostcardsHome from './_components/PostcardsHome';
 import BillingRow, { Trip } from './_components/BillingRow';
 import FAQ from './_components/FAQ';
-
-const CYC = ['Patagonia.', 'Hokkaido.', 'Bhutan.', 'Namibia.', 'Faroe.'];
 
 const TRIPS: Trip[] = [
   { n: '01', name: 'Patagonia', sub: 'Torres del Paine', when: 'Nov 08 · 26', fee: '$11,400', diff: '4/5', tone: 'peak', hype: 'Glaciers · W-Trek' },
@@ -55,13 +51,6 @@ const PEEK = [
 ];
 
 export default function Home2() {
-  const [cycIdx, setCycIdx] = useState(0);
-
-  useEffect(() => {
-    const t = setInterval(() => setCycIdx((i) => (i + 1) % CYC.length), 2600);
-    return () => clearInterval(t);
-  }, []);
-
   return (
     <div style={{ width: '100%', minHeight: '100vh', background: FIN.bg, color: FIN.ink, fontFamily: FIN.sans }}>
       {/* NAV */}
@@ -108,89 +97,8 @@ export default function Home2() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <section style={{ position: 'relative', height: 960, overflow: 'hidden', color: FIN.paper }}>
-        <HeroVideo />
-        <div style={{ position: 'absolute', inset: 0, padding: '0 44px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: 100, zIndex: 10 }}>
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 10,
-              background: 'rgba(253,251,245,0.12)',
-              backdropFilter: 'blur(10px)',
-              padding: '8px 16px',
-              borderRadius: 999,
-              marginBottom: 36,
-              fontSize: 13,
-              fontWeight: 500,
-              border: '1px solid rgba(253,251,245,0.2)',
-              width: 'fit-content',
-            }}
-          >
-            <span style={{ width: 7, height: 7, borderRadius: '50%', background: FIN.ochre }} />
-            Applications open for 2026 · 27
-          </div>
-
-          <h1 style={{ fontFamily: FIN.sans, fontSize: 148, fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.92, margin: 0, maxWidth: 1200, textShadow: '0 4px 40px rgba(0,0,0,0.4)' }}>
-            Go somewhere <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.sand }}>wild</span>
-            <br />
-            with ten other founders,
-            <br />
-            in{' '}
-            <span style={{ position: 'relative', display: 'inline-block', minWidth: 520 }}>
-              <span
-                key={cycIdx}
-                style={{
-                  fontFamily: FIN.serif,
-                  fontStyle: 'italic',
-                  fontWeight: 400,
-                  color: FIN.ochre,
-                  display: 'inline-block',
-                  animation: 'fe-cyc 2.6s ease',
-                }}
-              >
-                {CYC[cycIdx]}
-              </span>
-            </span>
-          </h1>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 40, alignItems: 'end', marginTop: 44 }}>
-            <p style={{ fontFamily: FIN.serif, fontSize: 22, fontStyle: 'italic', fontWeight: 400, lineHeight: 1.4, margin: 0, maxWidth: 540, color: 'rgba(253,251,245,0.9)' }}>
-              Six small-group expeditions a year. Every detail taken care of. The people you meet are the reason you&apos;ll come back.
-            </p>
-            <div style={{ display: 'flex', gap: 12 }}>
-              <a href="#apply" style={{ background: FIN.ochre, color: FIN.ink, padding: '18px 30px', borderRadius: 999, fontSize: 15, fontWeight: 600, boxShadow: '0 10px 28px rgba(216,138,54,0.35)' }}>
-                Request an invitation
-              </a>
-              <a href="#trips" style={{ color: FIN.paper, padding: '18px 26px', fontSize: 15, fontWeight: 500, border: '1px solid rgba(253,251,245,0.35)', borderRadius: 999 }}>
-                See the trips
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 28,
-            right: 44,
-            zIndex: 10,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-            opacity: 0.7,
-            fontFamily: FIN.mono,
-            fontSize: 10,
-            letterSpacing: '0.25em',
-            textTransform: 'uppercase',
-            color: FIN.paper,
-          }}
-        >
-          <div style={{ width: 1, height: 40, background: FIN.paper, animation: 'fe-scroll 2.2s ease-in-out infinite' }} />
-          Scroll
-        </div>
-      </section>
+      {/* HERO — text-clipped video */}
+      <Hero />
 
       {/* MARQUEE */}
       <div style={{ background: FIN.teal, color: FIN.paper, padding: '22px 0', overflow: 'hidden' }}>
@@ -425,33 +333,12 @@ export default function Home2() {
         </div>
       </section>
 
-      {/* DESTINATIONS — MAP */}
-      <section style={{ padding: '140px 44px 80px', background: FIN.bg }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
-          <div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Six continents</div>
-            <h2 style={{ fontFamily: FIN.sans, fontSize: 88, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 0.92, margin: 0, textTransform: 'uppercase' }}>
-              Unforgettable
-              <br />
-              <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, textTransform: 'none', color: FIN.teal }}>destinations</span>.
-            </h2>
-            <p style={{ fontSize: 15, lineHeight: 1.65, color: FIN.stone, margin: '28px 0 0', maxWidth: 380 }}>
-              Six handpicked corners of the world, chosen for the places — and the conversations — you cannot have anywhere else. Tap a pin.
-            </p>
-            <a href="#trips" style={{ display: 'inline-block', marginTop: 32, background: FIN.ochre, color: FIN.ink, padding: '14px 28px', borderRadius: 999, fontSize: 14, fontWeight: 600, letterSpacing: '0.05em' }}>
-              View all destinations →
-            </a>
-          </div>
-          <DestinationsMap />
-        </div>
-      </section>
-
       {/* DESTINATIONS — GLOBE */}
-      <section style={{ padding: '80px 44px 140px', background: FIN.bg2, position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '120px 44px', background: FIN.bg2, position: 'relative', overflow: 'hidden' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
           <DestinationsGlobe />
           <div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Or spin the world</div>
+            <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Six continents</div>
             <h2 style={{ fontFamily: FIN.sans, fontSize: 88, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 0.92, margin: 0, textTransform: 'uppercase' }}>
               Go <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, textTransform: 'none', color: FIN.ink, background: FIN.ochre, padding: '0 10px' }}>anywhere</span>
               <br />
