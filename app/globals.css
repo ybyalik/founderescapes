@@ -1,0 +1,50 @@
+html, body { margin: 0; padding: 0; background: #fafaf7; }
+* { box-sizing: border-box; }
+body { font-family: var(--font-inter), 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+::selection { background: #d7ff3a; color: #0a0a0a; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+@keyframes kinMarch { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+@keyframes kinMarchRev { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+@keyframes kinZoom { 0%, 100% { transform: scale(1.08); } 50% { transform: scale(1.18); } }
+@keyframes kinDot { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.4); opacity: .4; } }
+@keyframes kinPan { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+@keyframes kinShimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+
+.kin-march { animation: kinMarch 38s linear infinite; }
+.kin-march-rev { animation: kinMarchRev 48s linear infinite; }
+.kin-zoom { animation: kinZoom 20s ease-in-out infinite; }
+.kin-dot { animation: kinDot 1.4s ease-in-out infinite; }
+.kin-pan { animation: kinPan 30s ease-in-out infinite alternate; background-size: 180%; }
+
+.kin-chip { transition: all .2s; }
+.kin-chip:hover { background: #0a0a0a; color: #fafaf7; }
+
+.kin-card { transition: transform .3s cubic-bezier(.2,.7,.3,1); }
+.kin-card:hover { transform: translateY(-6px); }
+.kin-card:hover .kin-card-arrow { transform: translate(4px,-4px) rotate(0deg); }
+.kin-card-arrow { transition: transform .3s; }
+
+.kin-playbtn { transition: transform .3s; }
+.kin-video-wrap:hover .kin-playbtn { transform: scale(1.08); }
+
+.kin-feat-card { transition: all .35s cubic-bezier(.2,.7,.3,1); cursor: pointer; }
+.kin-feat-card:hover { transform: translateY(-8px); }
+.kin-feat-card:hover .kin-feat-img { transform: scale(1.05); }
+.kin-feat-img { transition: transform .6s cubic-bezier(.2,.7,.3,1); }
+
+.kin-faq { transition: background .2s; }
+.kin-faq:hover { background: rgba(215,255,58,0.1); }
+
+@keyframes obPinPulse { 0%, 100% { transform: scale(1); opacity: .8; } 50% { transform: scale(1.8); opacity: 0; } }
+@keyframes obCardIn { 0% { opacity: 0; transform: translate(-50%,-48%) scale(.96); } 100% { opacity: 1; transform: translate(-50%,-50%) scale(1); } }
+@keyframes obLineDraw { 0% { stroke-dashoffset: 120; } 100% { stroke-dashoffset: 0; } }
+@keyframes obGlobePulse { 0%, 100% { opacity: .6; r: 8; } 50% { opacity: 0; r: 14; } }
+@keyframes obTestFade { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
+
+.ob-pin { cursor: pointer; transition: transform .25s; }
+.ob-pin:hover { transform: scale(1.15); }
+.ob-pin-ring { animation: obPinPulse 2.4s ease-out infinite; transform-origin: center; }
+.ob-test-photo { transition: transform .6s cubic-bezier(.2,.7,.3,1); }
+.ob-test-photo:hover { transform: scale(1.03) rotate(0deg) !important; }
