@@ -2,164 +2,86 @@
 
 import { FIN } from '@/app/home2/_components/fin';
 
-const CHIPS = ['Trekking', 'Ski', 'Sail', 'Desert', 'Surf', 'Rivers'];
-
+// ── Variant 02 · LIQUID DISTORTION ─────────────────────────────────────────
+// Mountain video pushed through a wavy SVG turbulence + displacement filter.
+// Animated turbulence seed makes it look like the world is breathing.
+// Big italic Cormorant headline floats above with a backdrop blur.
 export default function V2Split() {
   return (
-    <section style={{ position: 'relative', minHeight: '100vh', display: 'grid', gridTemplateColumns: '1.15fr 1fr', background: FIN.bg, color: FIN.ink, fontFamily: FIN.sans }}>
-      {/* Left: video panel */}
-      <div style={{ position: 'relative', overflow: 'hidden', minHeight: 'min(720px, 100vh)' }}>
+    <section style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: '#06121a', color: '#fafaf7', fontFamily: FIN.sans }}>
+      {/* SVG filter definition (zero-sized) */}
+      <svg style={{ position: 'absolute', width: 0, height: 0 }}>
+        <defs>
+          <filter id="v2-liquid" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.011 0.018" numOctaves={2} seed={3} result="noise">
+              <animate attributeName="seed" values="3;9;3" dur="22s" repeatCount="indefinite" />
+              <animate attributeName="baseFrequency" values="0.011 0.018; 0.014 0.022; 0.011 0.018" dur="28s" repeatCount="indefinite" />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale={70} xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+      </svg>
+
+      {/* Distorted video layer */}
+      <div style={{ position: 'absolute', inset: '-8%', filter: 'url(#v2-liquid)', zIndex: 1 }}>
         <video
           autoPlay
           muted
           loop
           playsInline
-          poster="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?auto=format&fit=crop&w=1600&q=70"
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+          poster="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1920&q=70"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         >
           <source src="https://cdn.coverr.co/videos/coverr-a-drone-shot-of-a-mountain-peak-4068/1080p.mp4" type="video/mp4" />
         </video>
-
-        {/* Bottom-left caption */}
-        <div style={{ position: 'absolute', left: 32, bottom: 32, color: '#fafaf7', zIndex: 5 }}>
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 8,
-              padding: '8px 14px',
-              background: 'rgba(255,255,255,0.1)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255,255,255,0.2)',
-              borderRadius: 999,
-              fontFamily: FIN.mono,
-              fontSize: 10,
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-            }}
-          >
-            <span style={{ width: 6, height: 6, borderRadius: '50%', background: FIN.ochre, animation: 'v2Pulse 1.4s ease-in-out infinite' }} />
-            Cohort 12 · Patagonia
-          </div>
-          <div style={{ marginTop: 14, fontFamily: FIN.serif, fontStyle: 'italic', fontSize: 24, fontWeight: 400, textShadow: '0 2px 12px rgba(0,0,0,0.55)' }}>
-            03:40 — Twelve founders. One valley.
-          </div>
-        </div>
-
-        {/* Play button */}
-        <button
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: 92,
-            height: 92,
-            borderRadius: '50%',
-            background: FIN.ochre,
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.35)',
-            transition: 'transform 0.25s',
-            zIndex: 5,
-          }}
-          onMouseEnter={(e) => (e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.08)')}
-          onMouseLeave={(e) => (e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)')}
-        >
-          <svg width="32" height="32" viewBox="0 0 30 30" fill="#0a0a0a">
-            <path d="M9 6l16 9-16 9V6z" />
-          </svg>
-        </button>
-
-        {/* Top-right counter */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 28,
-            right: 28,
-            color: '#fafaf7',
-            fontFamily: FIN.mono,
-            fontSize: 10,
-            letterSpacing: '0.18em',
-            textTransform: 'uppercase',
-            zIndex: 5,
-          }}
-        >
-          02:14 / 03:40
-        </div>
       </div>
 
-      {/* Right: content */}
-      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '80px 56px', position: 'relative' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 28 }}>
-          <span style={{ width: 7, height: 7, borderRadius: '50%', background: FIN.ochre, animation: 'v2Pulse 1.4s ease-in-out infinite' }} />
-          <span style={{ fontFamily: FIN.mono, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: FIN.stone, fontWeight: 600 }}>
-            2026 / 27 cohorts open
-          </span>
-        </div>
+      {/* Color wash + vignette */}
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 55%, transparent 30%, rgba(6,18,26,0.65) 100%)', zIndex: 2 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(6,18,26,0.55) 0%, transparent 30%, rgba(6,18,26,0.85) 100%)', zIndex: 2 }} />
 
-        <h1 style={{ fontFamily: FIN.sans, fontSize: 'clamp(48px, 5.6vw, 84px)', lineHeight: 0.98, fontWeight: 600, letterSpacing: '-0.035em', margin: 0 }}>
-          Adventure trips,
+      {/* Top-left eyebrow */}
+      <div style={{ position: 'absolute', top: 28, left: 28, zIndex: 10, display: 'flex', alignItems: 'center', gap: 10, padding: '8px 14px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.18)', borderRadius: 999, fontFamily: FIN.mono, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+        <span style={{ width: 7, height: 7, borderRadius: '50%', background: FIN.ochre, animation: 'v2Pulse 1.4s ease-in-out infinite' }} />
+        Live · cohort 14
+      </div>
+
+      {/* Centered headline */}
+      <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', padding: '0 44px', zIndex: 10 }}>
+        <h1
+          style={{
+            fontFamily: FIN.sans,
+            fontSize: 'clamp(64px, 9.5vw, 156px)',
+            fontWeight: 600,
+            letterSpacing: '-0.04em',
+            lineHeight: 0.92,
+            margin: 0,
+            maxWidth: 1300,
+            textShadow: '0 4px 40px rgba(0,0,0,0.55)',
+          }}
+        >
+          The world is{' '}
+          <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.ochre }}>still moving</span>
           <br />
-          engineered for people
-          <br />
-          who{' '}
-          <span style={{ background: FIN.ochre, color: '#0a0a0a', padding: '0 12px', fontStyle: 'italic', fontFamily: FIN.serif, fontWeight: 500 }}>run things</span>.
+          without you.
         </h1>
-
-        <p style={{ marginTop: 32, fontFamily: FIN.serif, fontStyle: 'italic', fontSize: 20, lineHeight: 1.45, color: FIN.stone, maxWidth: 480 }}>
-          Six small-group expeditions a year. Every detail taken care of. The people you meet are the reason you&apos;ll come back.
+        <p style={{ marginTop: 36, fontFamily: FIN.serif, fontStyle: 'italic', fontSize: 22, lineHeight: 1.4, maxWidth: 580, color: 'rgba(250,250,247,0.85)' }}>
+          Eight days. Ten founders. One ridgeline. The other 357 days are louder than you think.
         </p>
-
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 32 }}>
-          {CHIPS.map((c, i) => (
-            <span
-              key={c}
-              style={{
-                border: `1px solid ${FIN.ink}`,
-                padding: '8px 16px',
-                borderRadius: 999,
-                fontSize: 12,
-                fontWeight: 500,
-                cursor: 'pointer',
-                background: i === 0 ? FIN.ink : 'transparent',
-                color: i === 0 ? FIN.bg : FIN.ink,
-                transition: 'all .2s',
-              }}
-            >
-              {c}
-            </span>
-          ))}
-        </div>
-
-        <div style={{ display: 'flex', gap: 14, marginTop: 40, alignItems: 'center' }}>
-          <a href="#apply" style={{ background: FIN.ink, color: FIN.bg, padding: '16px 28px', borderRadius: 999, fontSize: 14, fontWeight: 600 }}>
-            Request an invitation →
+        <div style={{ display: 'flex', gap: 12, marginTop: 36 }}>
+          <a href="#apply" style={{ background: FIN.ochre, color: '#0a0a0a', padding: '18px 30px', borderRadius: 999, fontSize: 15, fontWeight: 600 }}>
+            Request an invitation
           </a>
-          <a href="#trips" style={{ background: 'transparent', color: FIN.ink, padding: '16px 28px', fontSize: 14, fontWeight: 500, border: `1px solid ${FIN.ink}`, borderRadius: 999 }}>
+          <a href="#trips" style={{ color: '#fafaf7', padding: '18px 26px', fontSize: 15, fontWeight: 500, border: '1px solid rgba(255,255,255,0.4)', borderRadius: 999 }}>
             See the trips
           </a>
         </div>
+      </div>
 
-        {/* Bottom microstats */}
-        <div style={{ position: 'absolute', bottom: 40, left: 56, right: 56, display: 'flex', gap: 28, fontFamily: FIN.mono, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: FIN.stone }}>
-          <div>
-            <span style={{ display: 'block', fontFamily: FIN.sans, fontSize: 28, fontWeight: 700, color: FIN.ink, letterSpacing: '-0.02em', textTransform: 'none' }}>412</span>
-            Founders
-          </div>
-          <div>
-            <span style={{ display: 'block', fontFamily: FIN.sans, fontSize: 28, fontWeight: 700, color: FIN.ink, letterSpacing: '-0.02em', textTransform: 'none' }}>28</span>
-            Trips
-          </div>
-          <div>
-            <span style={{ display: 'block', fontFamily: FIN.sans, fontSize: 28, fontWeight: 700, color: FIN.ink, letterSpacing: '-0.02em', textTransform: 'none' }}>6</span>
-            Continents
-          </div>
-        </div>
+      {/* Bottom microreadout */}
+      <div style={{ position: 'absolute', bottom: 28, left: 44, right: 44, zIndex: 10, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: FIN.mono, fontSize: 10, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(250,250,247,0.55)' }}>
+        <span>S 50°56′ · W 73°24′ · Patagonia · 06:42 LOCAL</span>
+        <span>SEED → SERIES C · 412 ALUMNI · SINCE 2024</span>
       </div>
 
       <style>{`

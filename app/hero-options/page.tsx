@@ -15,27 +15,27 @@ export default function HeroOptions() {
       <PageNav />
 
       <div style={{ position: 'relative' }}>
-        <HeroLabel n="01" total={TOTAL} name="Cinematic Bleed" blurb="Full-bleed video, italic accent, big bottom-anchored type" dark />
+        <HeroLabel n="01" total={TOTAL} name="Text-clipped Video" blurb="Mountain video plays inside the negative space of GO WILDER" />
         <V1Cinematic />
       </div>
 
       <div style={{ position: 'relative' }}>
-        <HeroLabel n="02" total={TOTAL} name="Split Panel" blurb="Video panel left, content right, with chips and microstats" />
+        <HeroLabel n="02" total={TOTAL} name="Liquid Distortion" blurb="SVG turbulence + displacement warps the video like flowing water" dark />
         <V2Split />
       </div>
 
       <div style={{ position: 'relative' }}>
-        <HeroLabel n="03" total={TOTAL} name="Parallax Mountains" blurb="No video — layered SVG mountains drift on cursor move" />
+        <HeroLabel n="03" total={TOTAL} name="Magnetic 3D Tilt" blurb="Headline tilts to your cursor with custom dot cursor + lime spotlight" dark />
         <V3Parallax />
       </div>
 
       <div style={{ position: 'relative' }}>
-        <HeroLabel n="04" total={TOTAL} name="Word Reveal" blurb="Minimal — words fade in over a darkened video" dark />
+        <HeroLabel n="04" total={TOTAL} name="Aurora Particles" blurb="Canvas particle field — flowing lime + teal currents under starlight" dark />
         <V4WordReveal />
       </div>
 
       <div style={{ position: 'relative' }}>
-        <HeroLabel n="05" total={TOTAL} name="Marquee + Tiles" blurb="Editorial: giant scrolling type + 3 looping video tiles" />
+        <HeroLabel n="05" total={TOTAL} name="Cinematic Crop Reveal" blurb="On mount: video fills the screen, then collapses to a strip while content emerges" />
         <V5MarqueeTiles />
       </div>
     </>
