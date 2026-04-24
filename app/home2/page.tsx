@@ -488,7 +488,7 @@ export default function Home2() {
               What founders <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.teal }}>tell us</span>.
             </h2>
           </div>
-          <div style={{ fontFamily: FIN.mono, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: FIN.stone, paddingBottom: 8 }}>↻ Tap a postcard to flip</div>
+          <div style={{ fontFamily: FIN.mono, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: FIN.stone, paddingBottom: 8 }}>↻ Hover a postcard to flip</div>
         </div>
         <FlipTestimonials />
         </div>

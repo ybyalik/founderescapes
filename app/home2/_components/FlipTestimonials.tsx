@@ -25,7 +25,7 @@ const CARDS: Card[] = [
 
 export default function FlipTestimonials() {
   const [flipped, setFlipped] = useState<Record<number, boolean>>({});
-  const toggle = (i: number) => setFlipped((f) => ({ ...f, [i]: !f[i] }));
+  const setHover = (i: number, v: boolean) => setFlipped((f) => ({ ...f, [i]: v }));
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 40, rowGap: 72, maxWidth: 1280, margin: '0 auto' }}>
@@ -42,7 +42,8 @@ export default function FlipTestimonials() {
               transform: `rotate(${c.rot}deg) translateY(${isFlipped ? -6 : 0}px)`,
               transition: 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)',
             }}
-            onClick={() => toggle(i)}
+            onMouseEnter={() => setHover(i, true)}
+            onMouseLeave={() => setHover(i, false)}
           >
             <div
               style={{
@@ -124,7 +125,7 @@ export default function FlipTestimonials() {
                     backdropFilter: 'blur(4px)',
                   }}
                 >
-                  ↻ flip
+                  ↻ hover
                 </div>
               </div>
 
