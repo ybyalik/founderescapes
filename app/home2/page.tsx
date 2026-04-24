@@ -9,7 +9,6 @@ import DestinationsGlobe from './_components/DestinationsGlobe';
 import FlipTestimonials from './_components/FlipTestimonials';
 import PostcardsHome from './_components/PostcardsHome';
 import BillingRow, { Trip } from './_components/BillingRow';
-import CalRow, { CalRowData } from './_components/CalRow';
 import FAQ from './_components/FAQ';
 
 const CYC = ['Patagonia.', 'Hokkaido.', 'Bhutan.', 'Namibia.', 'Faroe.'];
@@ -19,15 +18,6 @@ const TRIPS: Trip[] = [
   { n: '02', name: 'Hokkaido', sub: 'Niseko Powder Week', when: 'Feb 14 · 27', fee: '$13,200', diff: '3/5', tone: 'wave', hype: 'Ski + onsen' },
   { n: '03', name: 'High Atlas', sub: 'Berber Ridgeline', when: 'Mar 22 · 27', fee: '$9,800', diff: '3/5', tone: 'clay', hype: 'Mules & altitude' },
   { n: '04', name: 'Namibia', sub: 'Skeleton Coast', when: 'Jun 05 · 27', fee: '$14,600', diff: '4/5', tone: 'dune', hype: 'Overland + camps' },
-];
-
-const CAL: CalRowData[] = [
-  { d: 'Nov 08 — 16, 2026', p: 'Patagonia', r: 'Torres del Paine', days: 8, fee: '$11,400', s: 'Departing' },
-  { d: 'Feb 14 — 21, 2027', p: 'Hokkaido', r: 'Niseko Powder Week', days: 7, fee: '$13,200', s: '2 seats' },
-  { d: 'Mar 22 — 28, 2027', p: 'High Atlas', r: 'Berber Ridgeline', days: 7, fee: '$9,800', s: '5 seats' },
-  { d: 'Jun 05 — 13, 2027', p: 'Namibia', r: 'Skeleton Coast', days: 9, fee: '$14,600', s: '7 seats' },
-  { d: 'Sep 10 — 16, 2027', p: 'Faroe Islands', r: 'Open-water Sail', days: 7, fee: '$12,400', s: 'Waitlist' },
-  { d: 'Oct 14 — 21, 2027', p: 'Bhutan', r: 'Druk Path', days: 8, fee: '$15,800', s: 'Waitlist' },
 ];
 
 const FAQS = [
@@ -269,53 +259,8 @@ export default function Home2() {
         </div>
       </section>
 
-      {/* THREE STEPS */}
-      <section id="howitworks" style={{ padding: '140px 44px', background: FIN.bg2 }}>
-        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
-        <div style={{ marginBottom: 72 }}>
-          <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>✴ How it works</div>
-          <h2 style={{ fontFamily: FIN.sans, fontSize: 84, fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.95, margin: 0 }}>
-            Three steps, then <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.teal }}>pack your boots</span>.
-          </h2>
-        </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
-          {[
-            { n: '01', t: 'Apply', b: 'Ten minutes. Tell us what you are working on, where you want to go, and what you hope to come back with.', tone: 'sun' as const },
-            { n: '02', t: 'Meet your cohort', b: 'We hand-pick 8 – 12 founders per trip. We introduce you on a call a month out so you land already knowing names.', tone: 'field' as const },
-            { n: '03', t: 'Go', b: 'We handle the rest — everything on the ground is covered. Guides, lodges, chefs, evac. You show up with a daypack.', tone: 'palm' as const },
-          ].map((s) => (
-            <div
-              key={s.n}
-              style={{
-                background: FIN.paper,
-                borderRadius: 20,
-                padding: 24,
-                border: `1px solid ${FIN.rule}`,
-                display: 'grid',
-                gridTemplateColumns: '1fr 140px',
-                gap: 20,
-                alignItems: 'stretch',
-                minHeight: 260,
-              }}
-            >
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <div style={{ fontFamily: FIN.sans, fontSize: 48, fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1, color: FIN.ink, marginBottom: 'auto' }}>{s.n}</div>
-                <div style={{ marginTop: 20 }}>
-                  <h3 style={{ fontFamily: FIN.sans, fontSize: 22, fontWeight: 700, letterSpacing: '-0.01em', lineHeight: 1.15, margin: '0 0 10px' }}>{s.t}</h3>
-                  <p style={{ fontSize: 13, lineHeight: 1.55, color: FIN.stone, margin: 0 }}>{s.b}</p>
-                </div>
-              </div>
-              <div style={{ borderRadius: 14, overflow: 'hidden' }}>
-                <Photo tone={s.tone} h="100%" />
-              </div>
-            </div>
-          ))}
-        </div>
-        </div>
-      </section>
-
-      {/* HOMEPAGE-STYLE 4-STEP SECTION (for comparison with the Three Steps above) */}
-      <section style={{ padding: '100px 44px 40px', background: FIN.bg }}>
+      {/* HOW A TRIP WORKS — 4 step cards */}
+      <section id="howitworks" style={{ padding: '100px 44px 40px', background: FIN.bg }}>
         <div style={{ maxWidth: 1400, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
             <div
@@ -576,43 +521,8 @@ export default function Home2() {
         </div>
       </section>
 
-      {/* CHAPTER 04 — SCHEDULE */}
-      <section id="calendar" style={{ padding: '140px 44px', background: FIN.bg }}>
-        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
-        <div style={{ marginBottom: 48 }}>
-          <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 04 · Showtimes</div>
-          <h2 style={{ fontFamily: FIN.sans, fontSize: 96, fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.92, margin: 0 }}>
-            Upcoming <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.teal }}>departures</span>.
-          </h2>
-        </div>
-        <div style={{ background: FIN.paper, borderRadius: 20, overflow: 'hidden', border: `1px solid ${FIN.rule}` }}>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '180px 1.3fr 1fr 110px 130px 150px',
-              background: FIN.ink,
-              color: FIN.paper,
-              fontFamily: FIN.mono,
-              fontSize: 10,
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-            }}
-          >
-            {['Dates', 'Trip', 'Route', 'Duration', 'All-in', 'Status'].map((h, i) => (
-              <div key={h} style={{ padding: '16px 22px', borderRight: i < 5 ? '1px solid rgba(253,251,245,0.15)' : 'none' }}>
-                {h}
-              </div>
-            ))}
-          </div>
-          {CAL.map((row, i, arr) => (
-            <CalRow key={i} row={row} last={i === arr.length - 1} />
-          ))}
-        </div>
-        </div>
-      </section>
-
       {/* CHAPTER 05 — FAQ */}
-      <section style={{ padding: '140px 44px', background: FIN.bg2 }}>
+      <section style={{ padding: '120px 44px 60px', background: FIN.bg }}>
         <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.4fr', gap: 80, maxWidth: 1400, margin: '0 auto' }}>
           <div style={{ position: 'sticky', top: 60, alignSelf: 'start' }}>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 05 · Questions</div>

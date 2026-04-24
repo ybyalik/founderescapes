@@ -6,23 +6,13 @@ import { FIN } from './fin';
 export default function FAQ({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ borderBottom: `1px solid ${FIN.rule}` }}>
-      <button
-        onClick={() => setOpen((o) => !o)}
-        style={{
-          width: '100%',
-          background: 'transparent',
-          border: 'none',
-          color: FIN.ink,
-          cursor: 'pointer',
-          padding: '26px 0',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          textAlign: 'left',
-        }}
-      >
-        <span style={{ fontFamily: FIN.sans, fontSize: 22, fontWeight: 600, letterSpacing: '-0.01em' }}>{q}</span>
+    <div
+      className="kin-faq"
+      style={{ borderBottom: `1px solid ${FIN.rule}`, padding: '24px 20px', cursor: 'pointer' }}
+      onClick={() => setOpen((o) => !o)}
+    >
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={{ fontFamily: FIN.sans, fontSize: 22, fontWeight: 600, letterSpacing: '-0.01em', color: FIN.ink }}>{q}</span>
         <span
           style={{
             width: 36,
@@ -37,12 +27,20 @@ export default function FAQ({ q, a }: { q: string; a: string }) {
             transform: open ? 'rotate(45deg)' : 'none',
             transition: 'all 0.2s',
             border: `1px solid ${FIN.rule}`,
+            flexShrink: 0,
           }}
         >
           +
         </span>
-      </button>
-      <div style={{ maxHeight: open ? 200 : 0, overflow: 'hidden', transition: 'max-height 0.35s ease, padding-bottom 0.35s', paddingBottom: open ? 24 : 0 }}>
+      </div>
+      <div
+        style={{
+          maxHeight: open ? 200 : 0,
+          overflow: 'hidden',
+          transition: 'max-height 0.35s ease, margin-top 0.35s',
+          marginTop: open ? 14 : 0,
+        }}
+      >
         <p style={{ fontSize: 17, lineHeight: 1.65, margin: 0, color: FIN.stone, maxWidth: 720 }}>{a}</p>
       </div>
     </div>
