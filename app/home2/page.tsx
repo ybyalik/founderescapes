@@ -264,6 +264,7 @@ export default function Home2() {
 
       {/* THREE STEPS */}
       <section id="howitworks" style={{ padding: '140px 44px', background: FIN.bg2 }}>
+        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
         <div style={{ marginBottom: 72 }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>✴ How it works</div>
           <h2 style={{ fontFamily: FIN.sans, fontSize: 84, fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.95, margin: 0 }}>
@@ -303,11 +304,12 @@ export default function Home2() {
             </div>
           ))}
         </div>
+        </div>
       </section>
 
       {/* CHAPTER 01 — COHORT */}
       <section style={{ padding: '120px 44px', background: FIN.bg2, position: 'relative' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 01 · The cohort</div>
             <h2 style={{ fontFamily: FIN.sans, fontSize: 124, fontWeight: 600, letterSpacing: '-0.04em', lineHeight: 0.88, margin: 0 }}>
@@ -359,6 +361,7 @@ export default function Home2() {
 
       {/* CHAPTER 02 — FOUR FEATURE TRIPS */}
       <section id="trips" style={{ padding: '120px 44px', background: FIN.tealD, color: FIN.paper }}>
+        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
         <div style={{ marginBottom: 60 }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: FIN.sand, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 02 · The billing</div>
           <h2 style={{ fontFamily: FIN.sans, fontSize: 124, fontWeight: 600, letterSpacing: '-0.04em', lineHeight: 0.88, margin: 0 }}>
@@ -372,11 +375,12 @@ export default function Home2() {
             <BillingRow key={t.n} t={t} i={i} />
           ))}
         </div>
+        </div>
       </section>
 
       {/* DESTINATIONS — MAP */}
       <section style={{ padding: '140px 44px 80px', background: FIN.bg }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr', gap: 60, alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Six continents</div>
             <h2 style={{ fontFamily: FIN.sans, fontSize: 88, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 0.92, margin: 0, textTransform: 'uppercase' }}>
@@ -397,7 +401,7 @@ export default function Home2() {
 
       {/* DESTINATIONS — GLOBE */}
       <section style={{ padding: '80px 44px 140px', background: FIN.bg2, position: 'relative', overflow: 'hidden' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 60, alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
           <DestinationsGlobe />
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Or spin the world</div>
@@ -429,6 +433,7 @@ export default function Home2() {
 
       {/* CHAPTER 03 — REVIEWS */}
       <section style={{ padding: '140px 44px 120px', background: FIN.bg, position: 'relative', overflow: 'hidden' }}>
+        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'end', marginBottom: 60, gap: 40 }}>
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 03 · The reviews</div>
@@ -439,6 +444,7 @@ export default function Home2() {
           <div style={{ fontFamily: FIN.mono, fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: FIN.stone, paddingBottom: 8 }}>↻ Tap a postcard to flip</div>
         </div>
         <FlipTestimonials />
+        </div>
       </section>
 
       {/* POSTCARDS */}
@@ -446,7 +452,7 @@ export default function Home2() {
 
       {/* PARTNERS STRIP */}
       <section style={{ padding: '36px 44px', background: FIN.ochre, color: FIN.ink }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 60, alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
           <div style={{ fontFamily: FIN.sans, fontSize: 18, fontWeight: 600, letterSpacing: '-0.01em' }}>As featured in →</div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             {['Condé Nast Traveler', 'Monocle', 'Afar', 'The Information', 'Outside', 'Bloomberg'].map((p) => (
@@ -470,6 +476,7 @@ export default function Home2() {
 
       {/* CHAPTER 04 — SCHEDULE */}
       <section id="calendar" style={{ padding: '140px 44px', background: FIN.bg }}>
+        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
         <div style={{ marginBottom: 48 }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 04 · Showtimes</div>
           <h2 style={{ fontFamily: FIN.sans, fontSize: 96, fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.92, margin: 0 }}>
@@ -499,11 +506,12 @@ export default function Home2() {
             <CalRow key={i} row={row} last={i === arr.length - 1} />
           ))}
         </div>
+        </div>
       </section>
 
       {/* CHAPTER 05 — FAQ */}
       <section style={{ padding: '140px 44px', background: FIN.bg2 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.4fr', gap: 80 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.4fr', gap: 80, maxWidth: 1400, margin: '0 auto' }}>
           <div style={{ position: 'sticky', top: 60, alignSelf: 'start' }}>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 05 · Questions</div>
             <h2 style={{ fontFamily: FIN.sans, fontSize: 80, fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.92, margin: 0 }}>

@@ -55,7 +55,7 @@ export default function PostcardsHome() {
         </h2>
       </div>
 
-      <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.2fr 1fr', gap: 40, alignItems: 'center', minHeight: 480, position: 'relative' }}>
+      <div style={{ maxWidth: 1400, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.2fr 1fr', gap: 40, alignItems: 'center', minHeight: 480, position: 'relative' }}>
         <div
           key={`l-${idx}`}
           style={{
