@@ -48,6 +48,13 @@ const COHORT = [
   { top: 260, left: 380, rot: 5, tone: 'dune' as const, name: 'Kwame T.', co: 'Orbital' },
 ];
 
+const HOW_STEPS_HP = [
+  { n: '01', t: 'Browse trips', d: 'Fourteen cohorts across six continents. Filter by terrain, month, or how much you want to suffer.', img: 'https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=500&q=80', r: -2 },
+  { n: '02', t: 'Apply & talk', d: '10-min application, a real human reply in 14 days, and a 30-min call to make sure the cohort balances.', img: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500&q=80', r: 3 },
+  { n: '03', t: 'Prep & pack', d: "Eight-week training plan, shared gear list, cohort Slack, and a Zoom to meet the six strangers you'll share a tent with.", img: 'https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=500&q=80', r: -3 },
+  { n: '04', t: 'Go somewhere hard', d: 'Meet your guide at the trailhead. No wifi for eight days. Come home with a cohort and, usually, a decision.', img: 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?w=500&q=80', r: 2 },
+];
+
 const PEEK = [
   { img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=70', rot: -6, w: 200 },
   { img: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=70', rot: 4, w: 220 },
@@ -304,6 +311,101 @@ export default function Home2() {
             </div>
           ))}
         </div>
+        </div>
+      </section>
+
+      {/* HOMEPAGE-STYLE 4-STEP SECTION (for comparison with the Three Steps above) */}
+      <section style={{ padding: '100px 44px 40px', background: FIN.bg }}>
+        <div style={{ maxWidth: 1400, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 56 }}>
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                border: `1px solid ${FIN.rule}`,
+                borderRadius: 100,
+                padding: '6px 14px',
+                fontSize: 11,
+                letterSpacing: '0.18em',
+                fontWeight: 600,
+                color: FIN.stone,
+              }}
+            >
+              <span style={{ fontSize: 14, color: FIN.ochre }}>✦</span>
+              HOW A TRIP WORKS
+            </div>
+            <h2
+              style={{
+                fontFamily: FIN.sans,
+                fontSize: 64,
+                fontWeight: 700,
+                margin: '24px auto 0',
+                letterSpacing: '-0.035em',
+                lineHeight: 1.02,
+                maxWidth: 780,
+                textWrap: 'balance' as const,
+              }}
+            >
+              Four honest steps between{' '}
+              <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 500 }}>signing up</span>{' '}
+              and standing at the trailhead.
+            </h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+            {HOW_STEPS_HP.map((s) => (
+              <div
+                key={s.n}
+                style={{
+                  background: FIN.paper,
+                  border: `1px solid ${FIN.rule}`,
+                  borderRadius: 14,
+                  padding: 24,
+                  height: 380,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <div
+                    style={{
+                      fontFamily: FIN.serif,
+                      fontStyle: 'italic',
+                      fontSize: 48,
+                      fontWeight: 500,
+                      lineHeight: 1,
+                      color: FIN.ink,
+                      letterSpacing: '-0.02em',
+                    }}
+                  >
+                    {s.n}
+                  </div>
+                  <div
+                    style={{
+                      width: 130,
+                      height: 160,
+                      borderRadius: 10,
+                      overflow: 'hidden',
+                      flexShrink: 0,
+                      backgroundImage: `url(${s.img})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                      transform: `rotate(${s.r}deg)`,
+                      boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
+                      border: '3px solid #fafaf7',
+                      transition: 'transform .4s cubic-bezier(.2,.7,.3,1)',
+                    }}
+                  />
+                </div>
+                <div>
+                  <div style={{ fontFamily: FIN.sans, fontSize: 22, fontWeight: 700, letterSpacing: '-0.02em', marginBottom: 10 }}>{s.t}</div>
+                  <div style={{ fontSize: 13, color: FIN.stone, lineHeight: 1.55 }}>{s.d}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
