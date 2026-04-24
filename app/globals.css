@@ -48,3 +48,84 @@ button { font-family: inherit; }
 .ob-pin-ring { animation: obPinPulse 2.4s ease-out infinite; transform-origin: center; }
 .ob-test-photo { transition: transform .6s cubic-bezier(.2,.7,.3,1); }
 .ob-test-photo:hover { transform: scale(1.03) rotate(0deg) !important; }
+
+/* ─────────────────────────  RESPONSIVE OVERRIDES  ───────────────────────── */
+/* Apply these classnames; media-query rules use !important to defeat inline. */
+
+/* TABLET — collapse 4-col card grids to 2 */
+@media (max-width: 1100px) {
+  .fe-tab-2col { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* MOBILE (≤ 768px) — main breakpoint */
+@media (max-width: 768px) {
+  /* Padding compaction on sections */
+  .fe-mob-pad { padding-left: 20px !important; padding-right: 20px !important; padding-top: 60px !important; padding-bottom: 60px !important; }
+  .fe-mob-pad-x { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* Collapse multi-col grids to single column */
+  .fe-mob-stack { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+  /* Vertical layout for flex rows */
+  .fe-mob-col { flex-direction: column !important; align-items: flex-start !important; gap: 20px !important; }
+
+  /* Headlines */
+  .fe-mob-h1 { font-size: 56px !important; line-height: 0.96 !important; letter-spacing: -0.035em !important; }
+  .fe-mob-h2 { font-size: 44px !important; line-height: 1 !important; }
+  .fe-mob-h3 { font-size: 36px !important; line-height: 1.05 !important; }
+
+  /* Body & label sizing */
+  .fe-mob-body { font-size: 16px !important; }
+  .fe-mob-label { font-size: 11px !important; letter-spacing: 0.16em !important; }
+
+  /* Hide on mobile */
+  .fe-mob-hide { display: none !important; }
+
+  /* CTA buttons full-width */
+  .fe-mob-fullbtn > a { flex: 1 1 auto !important; text-align: center !important; }
+
+  /* Cohort polaroid stack — fixed positions won't work, just hide */
+  .fe-cohort-stack > div { position: relative !important; top: auto !important; left: auto !important; }
+  .fe-cohort-stack { position: relative !important; height: auto !important; display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
+  .fe-cohort-stack > div { width: 100% !important; height: auto !important; transform: none !important; }
+
+  /* Peeking polaroid strip in CTA — show only first 3, smaller */
+  .fe-peek > div:nth-child(n+4) { display: none !important; }
+  .fe-peek > div { width: 28vw !important; height: 36vw !important; max-width: 110px !important; max-height: 140px !important; }
+
+  /* Globe — scale down */
+  .fe-globe-wrap svg { width: 100% !important; height: auto !important; max-width: 380px !important; }
+  .fe-globe-wrap { height: auto !important; min-height: 420px !important; padding: 20px 0 !important; }
+
+  /* Hero bottom row — stack subhead + CTAs */
+  .fe-hero-foot { flex-direction: column !important; align-items: flex-start !important; gap: 20px !important; }
+  .fe-hero-foot > div:last-child { width: 100% !important; }
+
+  /* Reduce postcard spread heights */
+  .fe-pc-spread { min-height: 0 !important; }
+  .fe-pc-spread > div { width: 100% !important; max-width: 320px !important; height: auto !important; aspect-ratio: 3 / 4 !important; }
+
+  /* Calendar/billing rows: stack content */
+  .fe-billing-row { grid-template-columns: 1fr !important; gap: 12px !important; padding-left: 0 !important; }
+  .fe-billing-row > div:nth-child(3) { width: 100% !important; height: 200px !important; }
+  .fe-billing-row > div:last-child { text-align: left !important; }
+
+  /* Flip testimonial — single col */
+  .fe-flip-grid { grid-template-columns: 1fr !important; max-width: 360px !important; margin: 0 auto !important; row-gap: 48px !important; }
+
+  /* Hero text mask — push subhead/CTA up so they don't crash into letters */
+  .fe-hero-section { height: 100vh !important; min-height: 600px !important; }
+
+  /* Hero nav — hide center links */
+  .fe-nav-links { display: none !important; }
+  .fe-nav-logo { font-size: 16px !important; }
+  .fe-nav-apply { padding: 9px 16px !important; font-size: 12px !important; }
+}
+
+/* Smaller phones */
+@media (max-width: 480px) {
+  .fe-mob-h1 { font-size: 44px !important; }
+  .fe-mob-h2 { font-size: 36px !important; }
+  .fe-mob-h3 { font-size: 30px !important; }
+  .fe-mob-pad { padding-left: 16px !important; padding-right: 16px !important; padding-top: 50px !important; padding-bottom: 50px !important; }
+}

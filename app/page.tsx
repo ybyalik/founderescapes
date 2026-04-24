@@ -73,16 +73,19 @@ export default function Home2() {
             <circle cx="14" cy="14" r="12" fill={FIN.teal} />
             <path d="M14 6 L20 18 L8 18 Z" fill={FIN.ochre} />
           </svg>
-          <div style={{ fontFamily: FIN.sans, fontSize: 19, fontWeight: 600, letterSpacing: '-0.01em' }}>Founder Escapes</div>
+          <div className="fe-nav-logo" style={{ fontFamily: FIN.sans, fontSize: 19, fontWeight: 600, letterSpacing: '-0.01em' }}>Founder Escapes</div>
         </div>
         <div style={{ display: 'flex', gap: 28, fontSize: 14, fontWeight: 500, alignItems: 'center' }}>
-          {['Trips', 'How it works', 'Calendar', 'Journal'].map((i) => (
-            <a key={i} href={`#${i.toLowerCase().replace(/ /g, '')}`} style={{ color: 'inherit', opacity: 0.9 }}>
-              {i}
-            </a>
-          ))}
+          <div className="fe-nav-links" style={{ display: 'flex', gap: 28 }}>
+            {['Trips', 'How it works', 'Calendar', 'Journal'].map((i) => (
+              <a key={i} href={`#${i.toLowerCase().replace(/ /g, '')}`} style={{ color: 'inherit', opacity: 0.9 }}>
+                {i}
+              </a>
+            ))}
+          </div>
           <a
             href="#apply"
+            className="fe-nav-apply"
             style={{
               background: FIN.ochre,
               color: FIN.ink,
@@ -114,18 +117,18 @@ export default function Home2() {
       </div>
 
       {/* MANIFESTO */}
-      <section style={{ padding: '140px 44px 120px', background: FIN.bg }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 80, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
+      <section className="fe-mob-pad" style={{ padding: '140px 44px 120px', background: FIN.bg }}>
+        <div className="fe-mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 80, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 24, textTransform: 'uppercase', letterSpacing: '0.22em' }}>✴ Our manifesto</div>
-            <h2 style={{ fontFamily: FIN.sans, fontSize: 88, fontWeight: 700, letterSpacing: '-0.035em', lineHeight: 0.96, margin: 0, textTransform: 'uppercase' }}>
+            <h2 className="fe-mob-h1" style={{ fontFamily: FIN.sans, fontSize: 88, fontWeight: 700, letterSpacing: '-0.035em', lineHeight: 0.96, margin: 0, textTransform: 'uppercase' }}>
               Built by
               <br />
               <span style={{ color: FIN.teal }}>founders,</span> for
               <br />
               the <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.ink, background: FIN.ochre, padding: '0 10px', textTransform: 'none' }}>restless</span> ones.
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, marginTop: 40 }}>
+            <div className="fe-mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, marginTop: 40 }}>
               <p style={{ fontSize: 15, lineHeight: 1.65, color: FIN.stone, margin: 0 }}>
                 We&apos;re a small crew of operators, storytellers, and guides who believe the best conversations happen a long way from a laptop. Every trip is built around the idea that a week in the wild with nine other founders can change the arc of a year.
               </p>
@@ -168,7 +171,7 @@ export default function Home2() {
       </section>
 
       {/* HOW A TRIP WORKS — 4 step cards */}
-      <section id="howitworks" style={{ padding: '100px 44px 40px', background: FIN.bg }}>
+      <section id="howitworks" className="fe-mob-pad" style={{ padding: '100px 44px 40px', background: FIN.bg }}>
         <div style={{ maxWidth: 1400, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
             <div
@@ -189,6 +192,7 @@ export default function Home2() {
               HOW A TRIP WORKS
             </div>
             <h2
+              className="fe-mob-h2"
               style={{
                 fontFamily: FIN.sans,
                 fontSize: 64,
@@ -206,7 +210,7 @@ export default function Home2() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
+          <div className="fe-tab-2col fe-mob-stack" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20 }}>
             {HOW_STEPS_HP.map((s) => (
               <div
                 key={s.n}
@@ -263,11 +267,11 @@ export default function Home2() {
       </section>
 
       {/* CHAPTER 01 — COHORT */}
-      <section style={{ padding: '120px 44px', background: FIN.bg2, position: 'relative' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
+      <section className="fe-mob-pad" style={{ padding: '120px 44px', background: FIN.bg2, position: 'relative' }}>
+        <div className="fe-mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 01 · The cohort</div>
-            <h2 style={{ fontFamily: FIN.sans, fontSize: 124, fontWeight: 600, letterSpacing: '-0.04em', lineHeight: 0.88, margin: 0 }}>
+            <h2 className="fe-mob-h1" style={{ fontFamily: FIN.sans, fontSize: 124, fontWeight: 600, letterSpacing: '-0.04em', lineHeight: 0.88, margin: 0 }}>
               A cohort
               <br />
               of <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.teal }}>ten</span>.
@@ -284,7 +288,7 @@ export default function Home2() {
               ))}
             </div>
           </div>
-          <div style={{ position: 'relative', height: 560 }}>
+          <div className="fe-cohort-stack" style={{ position: 'relative', height: 560 }}>
             {COHORT.map((p, i) => (
               <div
                 key={i}
@@ -315,11 +319,11 @@ export default function Home2() {
       </section>
 
       {/* CHAPTER 02 — FOUR FEATURE TRIPS */}
-      <section id="trips" style={{ padding: '120px 44px', background: '#0a0a0a', color: FIN.paper }}>
+      <section id="trips" className="fe-mob-pad" style={{ padding: '120px 44px', background: '#0a0a0a', color: FIN.paper }}>
         <div style={{ maxWidth: 1400, margin: '0 auto' }}>
         <div style={{ marginBottom: 60 }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: FIN.sand, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 02 · The billing</div>
-          <h2 style={{ fontFamily: FIN.sans, fontSize: 124, fontWeight: 600, letterSpacing: '-0.04em', lineHeight: 0.88, margin: 0 }}>
+          <h2 className="fe-mob-h1" style={{ fontFamily: FIN.sans, fontSize: 124, fontWeight: 600, letterSpacing: '-0.04em', lineHeight: 0.88, margin: 0 }}>
             Four feature
             <br />
             <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.ochre }}>expeditions</span>.
@@ -334,12 +338,12 @@ export default function Home2() {
       </section>
 
       {/* DESTINATIONS — GLOBE */}
-      <section style={{ padding: '120px 44px', background: FIN.bg2, position: 'relative', overflow: 'hidden' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
+      <section className="fe-mob-pad" style={{ padding: '120px 44px', background: FIN.bg2, position: 'relative', overflow: 'hidden' }}>
+        <div className="fe-mob-stack" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
           <DestinationsGlobe />
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Six continents</div>
-            <h2 style={{ fontFamily: FIN.sans, fontSize: 88, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 0.92, margin: 0, textTransform: 'uppercase' }}>
+            <h2 className="fe-mob-h2" style={{ fontFamily: FIN.sans, fontSize: 88, fontWeight: 700, letterSpacing: '-0.04em', lineHeight: 0.92, margin: 0, textTransform: 'uppercase' }}>
               Go <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, textTransform: 'none', color: FIN.ink, background: FIN.ochre, padding: '0 10px' }}>anywhere</span>
               <br />
               you haven&apos;t.
@@ -366,12 +370,12 @@ export default function Home2() {
       </section>
 
       {/* CHAPTER 03 — REVIEWS */}
-      <section style={{ padding: '140px 44px 120px', background: FIN.bg, position: 'relative', overflow: 'hidden' }}>
+      <section className="fe-mob-pad" style={{ padding: '140px 44px 120px', background: FIN.bg, position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'end', marginBottom: 60, gap: 40 }}>
+        <div className="fe-mob-stack" style={{ display: 'grid', gridTemplateColumns: '1fr auto', alignItems: 'end', marginBottom: 60, gap: 40 }}>
           <div>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 03 · The reviews</div>
-            <h2 style={{ fontFamily: FIN.sans, fontSize: 108, fontWeight: 600, letterSpacing: '-0.04em', lineHeight: 0.88, margin: 0 }}>
+            <h2 className="fe-mob-h1" style={{ fontFamily: FIN.sans, fontSize: 108, fontWeight: 600, letterSpacing: '-0.04em', lineHeight: 0.88, margin: 0 }}>
               What founders <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.teal }}>tell us</span>.
             </h2>
           </div>
@@ -386,11 +390,11 @@ export default function Home2() {
 
 
       {/* CHAPTER 05 — FAQ */}
-      <section style={{ padding: '120px 44px 60px', background: FIN.bg }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.4fr', gap: 80, maxWidth: 1400, margin: '0 auto' }}>
+      <section className="fe-mob-pad" style={{ padding: '120px 44px 60px', background: FIN.bg }}>
+        <div className="fe-mob-stack" style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.4fr', gap: 80, maxWidth: 1400, margin: '0 auto' }}>
           <div style={{ position: 'sticky', top: 60, alignSelf: 'start' }}>
             <div style={{ fontSize: 13, fontWeight: 600, color: FIN.ochreD, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 05 · Questions</div>
-            <h2 style={{ fontFamily: FIN.sans, fontSize: 80, fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.92, margin: 0 }}>
+            <h2 className="fe-mob-h2" style={{ fontFamily: FIN.sans, fontSize: 80, fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.92, margin: 0 }}>
               FAQs, not <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.teal }}>FOMO</span>.
             </h2>
           </div>
@@ -406,6 +410,7 @@ export default function Home2() {
       <section id="apply" style={{ position: 'relative', marginTop: 80, paddingTop: 120, overflow: 'visible' }}>
         {/* Peeking photo strip — sits above the green block, half-overlapping */}
         <div
+          className="fe-peek"
           style={{
             position: 'relative',
             zIndex: 3,
@@ -437,7 +442,7 @@ export default function Home2() {
         </div>
 
         {/* Dark green block with atmospheric bg */}
-        <div style={{ position: 'relative', background: '#1e3a2a', color: '#fafaf7', padding: '180px 40px 56px', overflow: 'hidden' }}>
+        <div className="fe-mob-pad-x" style={{ position: 'relative', background: '#1e3a2a', color: '#fafaf7', padding: '180px 40px 56px', overflow: 'hidden' }}>
           <div
             style={{
               position: 'absolute',
@@ -459,7 +464,7 @@ export default function Home2() {
 
           <div style={{ position: 'relative', textAlign: 'center', maxWidth: 1200, margin: '0 auto', zIndex: 2 }}>
             <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 24, textTransform: 'uppercase', letterSpacing: '0.22em', color: FIN.ochre }}>✴ Applications are open</div>
-            <h2 style={{ fontFamily: FIN.sans, fontSize: 108, fontWeight: 600, letterSpacing: '-0.04em', margin: 0, lineHeight: 0.92, color: '#fafaf7' }}>
+            <h2 className="fe-mob-h1" style={{ fontFamily: FIN.sans, fontSize: 108, fontWeight: 600, letterSpacing: '-0.04em', margin: 0, lineHeight: 0.92, color: '#fafaf7' }}>
               Come <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.ochre }}>get lost</span> with us.
             </h2>
             <p style={{ fontFamily: FIN.serif, fontSize: 22, fontStyle: 'italic', fontWeight: 400, lineHeight: 1.4, margin: '32px auto 36px', maxWidth: 620, color: 'rgba(250,250,247,0.85)' }}>
@@ -476,6 +481,7 @@ export default function Home2() {
             <div style={{ marginTop: 28, fontSize: 13, fontWeight: 500, color: 'rgba(250,250,247,0.6)' }}>8 – 12 founders per trip · No fake urgency</div>
 
             <div
+              className="fe-mob-stack"
               style={{
                 marginTop: 64,
                 paddingTop: 40,
@@ -506,6 +512,7 @@ export default function Home2() {
             </div>
 
             <div
+              className="fe-mob-col"
               style={{
                 marginTop: 48,
                 paddingTop: 22,

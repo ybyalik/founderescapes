@@ -32,6 +32,12 @@ const mono = JetBrains_Mono({
   display: 'swap',
 });
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover' as const,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://founderescapes.com'),
   title: 'Founder Escapes — Adventure Travel for Founders',

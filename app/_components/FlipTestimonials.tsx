@@ -28,7 +28,7 @@ export default function FlipTestimonials() {
   const setHover = (i: number, v: boolean) => setFlipped((f) => ({ ...f, [i]: v }));
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 40, rowGap: 72, maxWidth: 1280, margin: '0 auto' }}>
+    <div className="fe-flip-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 40, rowGap: 72, maxWidth: 1280, margin: '0 auto' }}>
       {CARDS.map((c, i) => {
         const isFlipped = !!flipped[i];
         return (

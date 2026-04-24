@@ -72,12 +72,12 @@ export default function DestinationsGlobe() {
   const hoveredDest = DESTS.find((d) => d.id === hovered);
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: 600, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div className="fe-globe-wrap" style={{ position: 'relative', width: '100%', height: 600, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <svg
         width={SIZE}
         height={SIZE}
         viewBox={`0 0 ${SIZE} ${SIZE}`}
-        style={{ overflow: 'visible' }}
+        style={{ overflow: 'visible', maxWidth: '100%', height: 'auto' }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >

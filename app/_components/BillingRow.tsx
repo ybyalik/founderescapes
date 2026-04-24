@@ -19,6 +19,7 @@ export default function BillingRow({ t, i }: { t: Trip; i: number }) {
   const [hover, setHover] = useState(false);
   return (
     <div
+      className="fe-billing-row"
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{
@@ -37,6 +38,7 @@ export default function BillingRow({ t, i }: { t: Trip; i: number }) {
       <div style={{ fontFamily: FIN.mono, fontSize: 14, letterSpacing: '0.2em', color: FIN.ochre, fontWeight: 600 }}>N°{t.n}</div>
       <div>
         <div
+          className="fe-mob-h2"
           style={{
             fontFamily: FIN.sans,
             fontSize: 76,

@@ -44,18 +44,18 @@ export default function PostcardsHome() {
   const marqueeRow = [...QUOTES, ...QUOTES];
 
   return (
-    <section style={{ padding: '140px 44px 0', background: FIN.bg, position: 'relative', overflow: 'hidden' }}>
+    <section className="fe-mob-pad" style={{ padding: '140px 44px 0', background: FIN.bg, position: 'relative', overflow: 'hidden' }}>
       <div style={{ textAlign: 'center', marginBottom: 60 }}>
         <div style={{ fontFamily: FIN.mono, fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: FIN.stone, marginBottom: 18 }}>
           ✴ Postcards home
         </div>
-        <h2 style={{ fontFamily: FIN.sans, fontSize: 88, fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.95, margin: 0, color: FIN.ink }}>
+        <h2 className="fe-mob-h2" style={{ fontFamily: FIN.sans, fontSize: 88, fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.95, margin: 0, color: FIN.ink }}>
           What <span style={{ fontVariantNumeric: 'tabular-nums' }}>412</span> operators{' '}
           <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400 }}>brought home</span>.
         </h2>
       </div>
 
-      <div style={{ maxWidth: 1400, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.2fr 1fr', gap: 40, alignItems: 'center', minHeight: 480, position: 'relative' }}>
+      <div className="fe-pc-spread fe-mob-stack" style={{ maxWidth: 1400, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.2fr 1fr', gap: 40, alignItems: 'center', minHeight: 480, position: 'relative' }}>
         <div
           key={`l-${idx}`}
           style={{

@@ -29,7 +29,7 @@ export default function Hero() {
   const fontSize = Math.min(w / 6.4, h / 2.8);
 
   return (
-    <section ref={ref} style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: FIN.bg, color: FIN.ink, fontFamily: FIN.sans }}>
+    <section ref={ref} className="fe-hero-section" style={{ position: 'relative', height: '100vh', overflow: 'hidden', background: FIN.bg, color: FIN.ink, fontFamily: FIN.sans }}>
       {/* Background video — slow ken-burns */}
       <video
         autoPlay
@@ -83,7 +83,7 @@ export default function Hero() {
       </svg>
 
       {/* Bottom-anchored caption + CTAs */}
-      <div style={{ position: 'absolute', bottom: 44, left: 44, right: 44, zIndex: 10, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40, flexWrap: 'wrap' }}>
+      <div className="fe-hero-foot" style={{ position: 'absolute', bottom: 44, left: 44, right: 44, zIndex: 10, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40, flexWrap: 'wrap' }}>
         <div style={{ maxWidth: 540 }}>
           <div style={{ fontFamily: FIN.mono, fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', color: FIN.stone, marginBottom: 10 }}>✴ Adventure travel for founders</div>
           <p style={{ fontFamily: FIN.serif, fontSize: 22, fontStyle: 'italic', fontWeight: 400, lineHeight: 1.4, margin: 0, color: FIN.ink }}>
