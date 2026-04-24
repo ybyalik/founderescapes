@@ -14,7 +14,7 @@ const links = [
 
 export default function Nav() {
   const pathname = usePathname();
-  if (pathname?.startsWith('/home2') || pathname?.startsWith('/hero-options')) return null;
+  if (pathname === '/') return null;
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname?.startsWith(href);
 
