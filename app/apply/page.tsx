@@ -37,7 +37,7 @@ export default function Apply() {
 
   return (
     <div style={{ background: BG, color: FG, minHeight: 1200 }}>
-      <div style={{ padding: '32px 40px 0' }}>
+      <div style={{ padding: '32px 24px 0', maxWidth: 880, margin: '0 auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
           <div style={{ fontSize: 11, letterSpacing: '0.2em', fontWeight: 600, color: MUTED }}>
             ◆ APPLY · COHORT 14 · STEP {Math.min(step + 1, 3)} / 3
@@ -69,7 +69,7 @@ export default function Apply() {
         </div>
       </div>
 
-      <section style={{ padding: '60px 40px 100px', display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: 80, alignItems: 'flex-start' }}>
+      <section className="fe-mob-stack" style={{ padding: '48px 24px 80px', display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 48, alignItems: 'flex-start', maxWidth: 880, margin: '0 auto' }}>
         <div>
           {step === 0 && (
             <Reveal>
