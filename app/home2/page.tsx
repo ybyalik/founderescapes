@@ -497,29 +497,6 @@ export default function Home2() {
       {/* POSTCARDS */}
       <PostcardsHome />
 
-      {/* PARTNERS STRIP */}
-      <section style={{ padding: '36px 44px', background: FIN.ochre, color: FIN.ink }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'auto 1fr', gap: 60, alignItems: 'center', maxWidth: 1400, margin: '0 auto' }}>
-          <div style={{ fontFamily: FIN.sans, fontSize: 18, fontWeight: 600, letterSpacing: '-0.01em' }}>As featured in →</div>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            {['Condé Nast Traveler', 'Monocle', 'Afar', 'The Information', 'Outside', 'Bloomberg'].map((p) => (
-              <div
-                key={p}
-                style={{
-                  fontFamily: FIN.serif,
-                  fontSize: 20,
-                  fontWeight: 500,
-                  fontStyle: p === 'Afar' || p === 'Monocle' ? 'italic' : 'normal',
-                  color: FIN.ink,
-                  opacity: 0.85,
-                }}
-              >
-                {p}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CHAPTER 05 — FAQ */}
       <section style={{ padding: '120px 44px 60px', background: FIN.bg }}>
