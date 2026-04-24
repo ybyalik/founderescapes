@@ -49,12 +49,12 @@ const COHORT = [
 ];
 
 const PEEK = [
-  { img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=70', rot: -6, y: 20, label: 'Patagonia' },
-  { img: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=70', rot: 4, y: -14, label: 'Bhutan' },
-  { img: 'https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?auto=format&fit=crop&w=600&q=70', rot: -3, y: 10, label: 'Hokkaido' },
-  { img: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=600&q=70', rot: 5, y: -6, label: 'Namibia' },
-  { img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=70', rot: -4, y: 18, label: 'Faroe' },
-  { img: 'https://images.unsplash.com/photo-1489493887464-892be6d1daae?auto=format&fit=crop&w=600&q=70', rot: 6, y: -10, label: 'Atlas' },
+  { img: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=70', rot: -6, w: 200 },
+  { img: 'https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&w=600&q=70', rot: 4, w: 220 },
+  { img: 'https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?auto=format&fit=crop&w=600&q=70', rot: -2, w: 210 },
+  { img: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=600&q=70', rot: 6, w: 200 },
+  { img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=70', rot: -4, w: 215 },
+  { img: 'https://images.unsplash.com/photo-1489493887464-892be6d1daae?auto=format&fit=crop&w=600&q=70', rot: 3, w: 205 },
 ];
 
 export default function Home2() {
@@ -518,139 +518,137 @@ export default function Home2() {
         </div>
       </section>
 
-      {/* CTA + FOOTER */}
-      <section id="apply" style={{ padding: '380px 44px 80px', background: FIN.footer, color: FIN.footerText, position: 'relative', overflow: 'visible', marginTop: 0 }}>
-        <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+      {/* CTA + FOOTER — matches homepage: peeking polaroids above + dark green block */}
+      <section id="apply" style={{ position: 'relative', marginTop: 80, paddingTop: 120, overflow: 'visible' }}>
+        {/* Peeking photo strip — sits above the green block, half-overlapping */}
+        <div
+          style={{
+            position: 'relative',
+            zIndex: 3,
+            display: 'flex',
+            justifyContent: 'center',
+            gap: 14,
+            padding: '0 40px',
+            marginBottom: -90,
+            pointerEvents: 'none',
+          }}
+        >
+          {PEEK.map((p, i) => (
+            <div
+              key={i}
+              style={{
+                width: p.w,
+                height: 260,
+                borderRadius: 14,
+                overflow: 'hidden',
+                transform: `rotate(${p.rot}deg)`,
+                backgroundImage: `url(${p.img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.25), 0 6px 12px rgba(0,0,0,0.12)',
+                border: '5px solid #fafaf7',
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Dark green block with atmospheric bg */}
+        <div style={{ position: 'relative', background: '#1e3a2a', color: '#fafaf7', padding: '180px 40px 56px', overflow: 'hidden' }}>
           <div
             style={{
               position: 'absolute',
-              left: 0,
-              right: 0,
-              bottom: 0,
-              height: '72%',
-              backgroundImage: 'url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2400&q=70)',
+              inset: 0,
+              backgroundImage: 'url(https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=2000&q=80)',
               backgroundSize: 'cover',
-              backgroundPosition: 'center bottom',
-              opacity: 0.35,
-              filter: 'grayscale(1) contrast(1.1)',
-              mixBlendMode: 'multiply',
+              backgroundPosition: 'center',
+              opacity: 0.18,
+              mixBlendMode: 'luminosity',
             }}
           />
           <div
             style={{
               position: 'absolute',
               inset: 0,
-              background: `linear-gradient(180deg, ${FIN.footer} 0%, ${FIN.footer} 28%, transparent 50%, transparent 85%, ${FIN.footer} 100%)`,
+              background: 'radial-gradient(circle at 50% 40%, transparent 30%, rgba(0,0,0,0.35) 100%)',
             }}
           />
-        </div>
 
-        <div style={{ position: 'absolute', top: -180, left: 0, right: 0, height: 300, display: 'flex', justifyContent: 'center', gap: 20, padding: '0 60px', pointerEvents: 'none', zIndex: 10 }}>
-          {PEEK.map((p, i) => (
+          <div style={{ position: 'relative', textAlign: 'center', maxWidth: 1200, margin: '0 auto', zIndex: 2 }}>
+            <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 24, textTransform: 'uppercase', letterSpacing: '0.22em', color: FIN.ochre }}>✴ Applications are open</div>
+            <h2 style={{ fontFamily: FIN.sans, fontSize: 108, fontWeight: 600, letterSpacing: '-0.04em', margin: 0, lineHeight: 0.92, color: '#fafaf7' }}>
+              Come <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.ochre }}>get lost</span> with us.
+            </h2>
+            <p style={{ fontFamily: FIN.serif, fontSize: 22, fontStyle: 'italic', fontWeight: 400, lineHeight: 1.4, margin: '32px auto 36px', maxWidth: 620, color: 'rgba(250,250,247,0.85)' }}>
+              Ten minutes to apply. We read every submission and reply inside a week — with a yes, a no, or a different trip that might suit you better.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
+              <a href="/apply" style={{ background: FIN.ochre, color: '#0a0a0a', padding: '18px 32px', borderRadius: 999, fontSize: 15, fontWeight: 600 }}>
+                Request an invitation →
+              </a>
+              <a href="#" style={{ background: 'transparent', color: '#fafaf7', padding: '18px 32px', fontSize: 15, fontWeight: 600, border: '1.5px solid rgba(250,250,247,0.6)', borderRadius: 999 }}>
+                Gift a seat to a friend
+              </a>
+            </div>
+            <div style={{ marginTop: 28, fontSize: 13, fontWeight: 500, color: 'rgba(250,250,247,0.6)' }}>8 – 12 founders per trip · No fake urgency</div>
+
             <div
-              key={i}
               style={{
-                flex: 1,
-                maxWidth: 200,
-                height: '100%',
-                position: 'relative',
-                transform: `rotate(${p.rot}deg) translateY(${p.y}px)`,
-                background: '#FFFFFF',
-                padding: 10,
-                paddingBottom: 32,
-                boxShadow: '0 22px 42px rgba(0,0,0,0.35), 0 6px 14px rgba(0,0,0,0.18)',
-                borderRadius: 2,
+                marginTop: 64,
+                paddingTop: 40,
+                borderTop: '1.5px solid rgba(255,255,255,0.18)',
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: 40,
+                alignItems: 'center',
+                textAlign: 'left',
+                maxWidth: 960,
+                marginLeft: 'auto',
+                marginRight: 'auto',
               }}
             >
-              <div
-                style={{
-                  width: '100%',
-                  height: 'calc(100% - 24px)',
-                  overflow: 'hidden',
-                  backgroundImage: `url(${p.img})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-              <div style={{ position: 'absolute', bottom: 6, left: 0, right: 0, fontFamily: FIN.serif, fontStyle: 'italic', fontSize: 12, textAlign: 'center', color: '#0a0a0a', opacity: 0.65 }}>{p.label}</div>
-            </div>
-          ))}
-        </div>
-
-        <div style={{ position: 'relative', textAlign: 'center', maxWidth: 1200, margin: '0 auto', zIndex: 1 }}>
-          <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 24, textTransform: 'uppercase', letterSpacing: '0.22em' }}>✴ Applications are open</div>
-          <h2 style={{ fontFamily: FIN.sans, fontSize: 120, fontWeight: 600, letterSpacing: '-0.04em', margin: 0, lineHeight: 0.9 }}>
-            Come <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.footerText }}>get lost</span> with us.
-          </h2>
-          <p style={{ fontFamily: FIN.serif, fontSize: 24, fontStyle: 'italic', fontWeight: 400, lineHeight: 1.4, margin: '36px auto 40px', maxWidth: 640 }}>
-            Ten minutes to apply. We read every submission and reply inside a week — with a yes, a no, or a different trip that might suit you better.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 14, flexWrap: 'wrap' }}>
-            <a href="/apply" style={{ background: FIN.ink, color: FIN.paper, padding: '22px 44px', borderRadius: 999, fontSize: 16, fontWeight: 600 }}>
-              Request an invitation →
-            </a>
-            <a href="#" style={{ background: 'transparent', color: FIN.footerText, padding: '22px 36px', fontSize: 16, fontWeight: 500, border: `1.5px solid ${FIN.footerText}`, borderRadius: 999 }}>
-              Gift a seat to a friend
-            </a>
-          </div>
-          <div style={{ marginTop: 32, fontSize: 13, fontWeight: 500, opacity: 0.7 }}>8 – 12 founders per trip · No fake urgency</div>
-
-          <div
-            style={{
-              marginTop: 80,
-              paddingTop: 48,
-              borderTop: '1.5px solid rgba(20,19,16,0.18)',
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 40,
-              alignItems: 'center',
-              textAlign: 'left',
-              maxWidth: 960,
-              marginLeft: 'auto',
-              marginRight: 'auto',
-            }}
-          >
-            <div>
-              <div style={{ fontFamily: FIN.mono, fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: 10, opacity: 0.7 }}>✴ Field Notes — monthly</div>
-              <div style={{ fontFamily: FIN.sans, fontSize: 28, fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-                Not ready? Get <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400 }}>one good email</span> a month.
+              <div>
+                <div style={{ fontFamily: FIN.mono, fontSize: 11, letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: 10, color: FIN.ochre }}>✴ Field Notes — monthly</div>
+                <div style={{ fontFamily: FIN.sans, fontSize: 26, fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.1, color: '#fafaf7' }}>
+                  Not ready? Get <span style={{ fontFamily: FIN.serif, fontStyle: 'italic', fontWeight: 400, color: FIN.ochre }}>one good email</span> a month.
+                </div>
               </div>
+              <form
+                onSubmit={(e) => e.preventDefault()}
+                style={{ display: 'flex', alignItems: 'center', background: '#fafaf7', borderRadius: 999, padding: 6 }}
+              >
+                <input placeholder="your@email" style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', padding: '14px 20px', fontSize: 15, color: '#0a0a0a' }} />
+                <button style={{ background: '#0a0a0a', color: '#fafaf7', border: 'none', padding: '14px 26px', borderRadius: 999, cursor: 'pointer', fontSize: 14, fontWeight: 600 }}>Subscribe</button>
+              </form>
             </div>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              style={{ display: 'flex', alignItems: 'center', background: FIN.paper, borderRadius: 999, padding: 6, border: '1px solid rgba(20,19,16,0.12)' }}
-            >
-              <input placeholder="your@email" style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', padding: '14px 20px', fontSize: 15, color: FIN.ink }} />
-              <button style={{ background: FIN.ink, color: FIN.paper, border: 'none', padding: '14px 26px', borderRadius: 999, cursor: 'pointer', fontSize: 14, fontWeight: 600 }}>Subscribe</button>
-            </form>
-          </div>
 
-          <div
-            style={{
-              marginTop: 56,
-              paddingTop: 24,
-              borderTop: '1px solid rgba(20,19,16,0.15)',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              fontSize: 12,
-              fontWeight: 500,
-              opacity: 0.65,
-              maxWidth: 960,
-              marginLeft: 'auto',
-              marginRight: 'auto',
-              flexWrap: 'wrap',
-              gap: 12,
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-              <svg width="20" height="20" viewBox="0 0 28 28">
-                <circle cx="14" cy="14" r="12" fill={FIN.teal} />
-                <path d="M14 6 L20 18 L8 18 Z" fill={FIN.ink} />
-              </svg>
-              <span>© 2026 Founder Escapes · Boulder, CO</span>
+            <div
+              style={{
+                marginTop: 48,
+                paddingTop: 22,
+                borderTop: '1px solid rgba(255,255,255,0.12)',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                fontSize: 11,
+                fontFamily: FIN.mono,
+                letterSpacing: '0.1em',
+                color: 'rgba(250,250,247,0.55)',
+                maxWidth: 1200,
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                flexWrap: 'wrap',
+                gap: 12,
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <svg width="20" height="20" viewBox="0 0 28 28">
+                  <circle cx="14" cy="14" r="12" fill={FIN.ochre} />
+                  <path d="M14 6 L20 18 L8 18 Z" fill="#1e3a2a" />
+                </svg>
+                <span>© 2026 FOUNDER ESCAPES · BOULDER, CO</span>
+              </div>
+              <span>1% FOR THE PLANET · CARBON NEUTRAL · HELLO@FOUNDERESCAPES.COM</span>
             </div>
-            <span>1% for the Planet · Carbon neutral · hello@founderescapes.com</span>
           </div>
         </div>
       </section>
