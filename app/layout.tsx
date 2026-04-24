@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Cormorant_Garamond, JetBrains_Mono } from 'next/font/google';
+import { Inter, Inter_Tight, Cormorant_Garamond, JetBrains_Mono } from 'next/font/google';
 import Nav from '@/components/Nav';
 import './globals.css';
 
@@ -7,6 +7,13 @@ const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-inter',
+  display: 'swap',
+});
+
+const interTight = Inter_Tight({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter-tight',
   display: 'swap',
 });
 
@@ -51,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable} ${mono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${interTight.variable} ${cormorant.variable} ${mono.variable}`}>
       <body>
         <Nav />
         {children}

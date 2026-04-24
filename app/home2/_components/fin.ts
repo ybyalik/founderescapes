@@ -1,0 +1,20 @@
+// Horizon palette baked from the original Final design
+export const FIN = {
+  bg: '#FFF4E6',
+  bg2: '#FFE3C2',
+  paper: '#FFFBF3',
+  ink: '#1A1410',
+  teal: '#0E7C86',
+  tealD: '#064047',
+  ochre: '#F26419',
+  ochreD: '#B83D08',
+  sand: '#FFCF99',
+  stone: '#8B7A6A',
+  rule: 'rgba(20,19,16,0.12)',
+  ruleD: 'rgba(255,255,255,0.18)',
+  footer: '#F26419',
+  footerText: '#1A1410',
+  serif: 'var(--font-cormorant), "Cormorant Garamond", Georgia, serif',
+  sans: 'var(--font-inter-tight), "Inter Tight", system-ui, sans-serif',
+  mono: 'var(--font-mono), "JetBrains Mono", ui-monospace, monospace',
+} as const;
