@@ -65,7 +65,7 @@ export default function Home2() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          color: FIN.paper,
+          color: FIN.ink,
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -101,7 +101,7 @@ export default function Home2() {
       <Hero />
 
       {/* MARQUEE */}
-      <div style={{ background: FIN.teal, color: FIN.paper, padding: '22px 0', overflow: 'hidden' }}>
+      <div style={{ background: '#0a0a0a', color: FIN.paper, padding: '22px 0', overflow: 'hidden' }}>
         <div style={{ display: 'flex', animation: 'fe-marq 40s linear infinite', whiteSpace: 'nowrap', gap: 44 }}>
           {[...Array(3)].flatMap((_, x) =>
             ['Patagonia ✴ Chile', 'Hokkaido ✴ Japan', 'High Atlas ✴ Morocco', 'Namibia ✴ Skeleton Coast', 'Faroe Islands ✴ Denmark', 'Bhutan ✴ Himalaya', 'Baja ✴ Mexico'].map((p) => (
@@ -315,7 +315,7 @@ export default function Home2() {
       </section>
 
       {/* CHAPTER 02 — FOUR FEATURE TRIPS */}
-      <section id="trips" style={{ padding: '120px 44px', background: FIN.tealD, color: FIN.paper }}>
+      <section id="trips" style={{ padding: '120px 44px', background: '#0a0a0a', color: FIN.paper }}>
         <div style={{ maxWidth: 1400, margin: '0 auto' }}>
         <div style={{ marginBottom: 60 }}>
           <div style={{ fontSize: 13, fontWeight: 600, color: FIN.sand, marginBottom: 16, textTransform: 'uppercase', letterSpacing: '0.18em' }}>── Chapter 02 · The billing</div>

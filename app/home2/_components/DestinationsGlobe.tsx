@@ -162,9 +162,6 @@ export default function DestinationsGlobe() {
           <circle cx={CX} cy={CY} r={R} fill="url(#g-shade)" pointerEvents="none" />
         </g>
 
-        {/* Highlight specular */}
-        <ellipse cx={CX - R * 0.35} cy={CY - R * 0.45} rx={R * 0.34} ry={R * 0.2} fill="rgba(255,255,255,0.18)" pointerEvents="none" />
-
         {/* Visible-side destination labels */}
         {DESTS.map((d) => {
           if (!isVisible(d.lon, d.lat, rotation)) return null;

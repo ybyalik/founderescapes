@@ -82,30 +82,6 @@ export default function Hero() {
         <rect width="100%" height="100%" fill={FIN.bg} mask="url(#fe-hero-knockout)" />
       </svg>
 
-      {/* Top-right cohort badge */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 28,
-          right: 28,
-          zIndex: 10,
-          display: 'flex',
-          alignItems: 'center',
-          gap: 10,
-          padding: '8px 14px',
-          background: FIN.paper,
-          border: `1px solid ${FIN.rule}`,
-          borderRadius: 999,
-          fontFamily: FIN.mono,
-          fontSize: 11,
-          letterSpacing: '0.18em',
-          textTransform: 'uppercase',
-        }}
-      >
-        <span style={{ width: 7, height: 7, borderRadius: '50%', background: FIN.ochre, animation: 'feHeroPulse 1.4s ease-in-out infinite' }} />
-        Cohort 14 · 6 seats
-      </div>
-
       {/* Bottom-anchored caption + CTAs */}
       <div style={{ position: 'absolute', bottom: 44, left: 44, right: 44, zIndex: 10, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', gap: 40, flexWrap: 'wrap' }}>
         <div style={{ maxWidth: 540 }}>
